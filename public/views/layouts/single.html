@@ -1,0 +1,33 @@
+<div ng-controller="layouts.SingleController" class="l-single">
+
+
+	<!-- BEGIN: Layout Container. -->
+	<div class="l-container">
+
+		<!-- BEGIN: Menu Layout. -->
+
+		<nav class="navbar navbar-default" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		      <span class="sr-only">Toggle navigation</span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#">Simple</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		</nav>
+
+		<!-- BEGIN: Layout Header. -->
+
+
+		<!-- Include Body Content. -->
+		<div ng-switch="subview" class="l-body">
+			<div ng-switch-when="splash" ng-include=" 'views/splash/index.html' "></div>
+		</div>
+	</div>
+	<!-- END: Layout Container. -->
+</div>

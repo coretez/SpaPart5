@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="Simple" ng-controller="AppController">
+<head>
+	<meta charset="utf-8" />
+	<title ng-bind="windowTitle">Our Second Angular Program</title>
+	<!--
+		Add our style sheets here.
+	-->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div ng-switch="subview">
+		<!--
+			This subview will show while the AngularJS app is loading since it's visible right in 
+			the page. Once the app kicks in, however, the calculated subview will determine the
+			appropriate layout to render.
+		-->
+		<div ng-switch-when="loading" class="l-loading">
+				<h4>Welcome to Simple Forms.</h4>
+				<p>Loading Application</p>	
+		</div>
+		<!-- Core layouts. -->
+		<div ng-switch-when="single"    ng-include=" 'views/layouts/single.html' "></div>
+		<div ng-switch-when="standard" ng-include=" 'views/layouts/standard.html' "></div>
+	</div>
+	
+	<!-- Load Browser-Side JavaScript. -->
+    <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/lodash/dist/lodash.js"></script>
+
+	<!-- Load AngularJS application module. (Load this before page controllers) -->
+	<script type="text/javascript" src="js/manage-routes.js"></script>
+
+    <!-- Load Controllers. -->
+	<!-- Layouts. -->
+	<script type="text/javascript" src="controllers/layouts/single-controller.js"></script>
+	<script type="text/javascript" src="controllers/layouts/standard-controller.js"></script>
+	<!-- Pages and Subviews. -->
+	<script type="text/javascript" src="controllers/first/first-controller.js"></script>
+	<script type="text/javascript" src="controllers/second/second-controller.js"></script>
+	<script type="text/javascript" src="controllers/profile/profile-controller.js"></script>
+	<script type="text/javascript" src="controllers/admin/list-controller.js"></script>
+	<script type="text/javascript" src="controllers/splash/splash-controller.js"></script>
+	<script type="text/javascript" src="controllers/app-controller.js"></script>
+	
+	<!-- Load Routing Support. (Load these after the page controllers) -->
+	<script type="text/javascript" src="js/lodash-service.js"></script>
+	<script type="text/javascript" src="js/request-context.js"></script>		
+	<script type="text/javascript" src="js/render-context.js"></script>
+</body>
+</html>

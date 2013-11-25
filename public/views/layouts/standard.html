@@ -1,0 +1,48 @@
+<div ng-controller="layouts.StandardController" class="l-standard">
+
+
+	<!-- BEGIN: Layout Container. -->
+	<div class="l-container">
+
+		<!-- BEGIN: Menu Layout. -->
+		
+		
+		<nav class="navbar navbar-default" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		      <span class="sr-only">Toggle navigation</span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="#">Simple</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse navbar-ex1-collapse">
+		    <ul class="nav navbar-nav">
+		      <li><a href="#/first">Page 1</a></li>
+		      <li><a href="#/second">Page 2</a></li>
+		      <li><a href="#/listUsers">List Users</a></li>
+		      <li><a href="#/signup">Sign Up</a></li>
+		    </ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+
+		<!-- BEGIN: Layout Header. -->
+
+		<!-- Include Body Content. -->
+		<div ng-switch="subview" class="l-body">
+			<div ng-switch-when="first"  ng-include=" 'views/first/index.html'  "></div>
+			<div ng-switch-when="second" ng-include=" 'views/second/index.html' "></div>
+			<div ng-switch-when="signup" ng-include=" 'views/profile/index.html' "></div>
+			<div ng-switch-when="listUsers" ng-include=" 'views/admin/index.html' "></div>
+		</div>
+
+	</div>
+	<!-- END: Layout Container. -->
+
+	<!-- BEGIN: Layout Footer. -->
+	<!-- END: Layout Footer. -->
+</div>

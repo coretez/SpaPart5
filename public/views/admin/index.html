@@ -1,0 +1,22 @@
+<div ng-controller="admin.ListController">
+	<div class="row">
+		<div class="col-md-1"></div>
+    	<div class="col-md-6">
+      		<div class="well">
+	        <legend>User List</legend>
+			<table class="table table-bordered table-condensed">
+				
+				<thead>
+					<tr>
+						<th>User Name</th><th>System Name</th><th>eMail</th><th>Role</th>
+					</tr>
+				</thead>
+				<tbody>				
+				<tr ng-repeat="user in users">
+				        <td>{{ user.humanName }}</td><td>{{ user.systemName }}</td><td>{{ user.email }}</td><td>{{ user.role }}</td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
